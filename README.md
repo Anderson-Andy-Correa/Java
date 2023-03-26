@@ -1,10 +1,15 @@
 # Java
+## Cursos Avulsos e Formações:
+---
 
-## Atualmente contando com os Cursos:
+## Alura
+- 1 - Aprenda a programar em Java com Orientação a Objetos
 
-### Curso em Video / Estudonauta
-JAVA BÁSICO - MÓDULO 00
+---
 
-JAVA POO - MÓDULO 00
+## Curso em Video / Estudonauta
+- 1 - Java Básico
 
-##
+- 2 - Java Poo
+
+---
