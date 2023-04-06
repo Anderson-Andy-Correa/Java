@@ -5,8 +5,8 @@
 ---
 ## Em Andamento
 
-### 1 - Entender a linguagem Java e orientação a objetos
-- 1.4 - Java Exceções: Aprenda a criar, lançar e controlar exceções
+### 2 - Conhecer as principais bibliotecas
+- 2.1 - Java e java.lang: Programe com a classe Object e String
 
 ---
 
@@ -19,12 +19,13 @@
 
 - 1.3 - Java Polimorfismo: entenda herança e interfaces
 
+- 1.4 - Java Exceções: Aprenda a criar, lançar e controlar exceções
+
 ---
 
 ## Para Iniciar
 
 ### 2 - Conhecer as principais bibliotecas
-- 2.1 - Java e java.lang: Programe com a classe Object e String
 
 - 2.2 - Java e java.util: Coleções, Wrappers e Lambda expressions
 
