@@ -9,21 +9,10 @@ public class App {
     public static String analisarFrase(String Frase) {
         int contador = 0;
         int contadorAux = 0;
-        String subString = Frase.trim();
+        String subString = "";
         char testeChar = ' ';
-        ArrayList<String> lista = new ArrayList<String>();
-
-        while (!subString.isEmpty()) {
-            if (subString.contains(" ")) {
-                lista.add(subString.substring(0, subString.indexOf(" ")));
-                subString = subString.substring(subString.indexOf(" ")).trim();
-            } else {
-                lista.add(subString);
-                subString = subString.substring(subString.length()).trim();
-            }
-
-        }
-
+        ArrayList<String> lista = new ArrayList<>(Arrays.asList(Frase.split(" ")));
+        
         for (int i = 0; i < lista.size(); i++) {
             for (int j = 0; j < lista.get(i).length(); j++) {
                 testeChar = lista.get(i).charAt(j);

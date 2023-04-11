@@ -23,6 +23,7 @@ public class AnalisadorFrase{
         this.subString = frase;
         this.copularLista();
         int contadorAux;
+        this.lista = Frase.split();
         
         for (int i = 0; i < this.lista.size(); i++) {
             for (int j = 0; j < this.lista.get(i).length(); j++) {
