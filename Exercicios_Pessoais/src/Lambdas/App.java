@@ -2,6 +2,7 @@ package Lambdas;
 
 import java.lang.Math;
 import java.util.ArrayList;
+import java.util.List;
 
 public class App{
 
@@ -30,6 +31,14 @@ public class App{
             }
         );
         System.out.println("FIM");
+
+        List<String> palavras = new ArrayList<>();
+        palavras.add("alura online");
+        palavras.add("casa do código");
+        palavras.add("caelum");
+        
+        palavras.sort((fisrtWord, secoundWord) -> fisrtWord.length() - secoundWord.length());
+        palavras.forEach((palavra) -> System.out.println(palavra));
     }
 
 }
