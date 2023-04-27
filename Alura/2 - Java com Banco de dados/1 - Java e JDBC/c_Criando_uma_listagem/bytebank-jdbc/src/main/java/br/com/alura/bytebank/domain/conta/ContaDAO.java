@@ -23,7 +23,7 @@ public class ContaDAO {
         var cliente = new Cliente(dadosDaConta.dadosCliente());
         var conta = new Conta(dadosDaConta.numero(), cliente);
         
-        String sql = "INSERT INTO conta (numero, saldo, cliente_nome, cliente_cpf, cliente_email)" + 
+        var sql = "INSERT INTO conta (numero, saldo, cliente_nome, cliente_cpf, cliente_email)" +
                                 "VALUES (?, ?, ?, ?, ?)";
 
         try {
@@ -83,7 +83,7 @@ public class ContaDAO {
 
         try {
             ps = this.conn.prepareStatement(sql);
-            ps.setInt(0, numero);
+            ps.setInt(1, numero);
             rs = ps.executeQuery();
 
             while (rs.next()) {
