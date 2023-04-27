@@ -56,7 +56,7 @@ public class ContaDAO {
 
             while (resultSet.next()) {
                 Integer numero = resultSet.getInt(1);
-                BigDecimal saldo = resultSet.getBigDecimal(2);
+                // BigDecimal saldo = resultSet.getBigDecimal(2);
                 String nome = resultSet.getString(3);
                 String cpf = resultSet.getString(4);
                 String email = resultSet.getString(5);
@@ -74,22 +74,36 @@ public class ContaDAO {
         return contas;
     }
 
-    public Conta buscarConta(Integer numero){     
-        Object conta = null;
+    public Conta listarConta(Integer numero){
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        Conta conta = null;
+        
         String sql = "SELECT * FROM conta WHERE numero = ?";
 
         try {
-            PreparedStatement ps = conn.prepareStatement(sql);
-            ps.setInt(1, numero.intValue());
-            conta = ps.executeQuery().getObject(0);
+            ps = this.conn.prepareStatement(sql);
+            ps.setInt(0, numero);
+            rs = ps.executeQuery();
 
+            while (rs.next()) {
+                Integer numeroConta = rs.getInt(1);
+                // BigDecimal saldo = rs.getBigDecimal(2);
+                String nome = rs.getString(3);
+                String cpf = rs.getString(4);
+                String email = rs.getString(5);
+                Cliente cliente = new Cliente(new DadosCadastroCliente (nome, cpf, email));
+                conta = new Conta(numeroConta, cliente);
+            }
+            rs.close();
             ps.close();    
-            conn.close();
-        } catch (SQLException e){
+            this.conn.close();
+
+        } catch (SQLException e) {
             throw new RuntimeException(e);
         }
 
-        return (Conta) conta;
+        return conta;
     }
 
 }
