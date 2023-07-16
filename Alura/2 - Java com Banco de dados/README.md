@@ -5,20 +5,22 @@
 ---
 ## Em Andamento
 
-### 1 - Java e JDBC
-- 1.1 - JJava e JDBC: Trabalhando com um banco de dados
+### 2 - ORM com JPA
+
+- 2.1 - Persistência com JPA: Hibernate
 
 ---
 
 ## Completo
 
+### 1 - Java e JDBC
+- 1.1 - JJava e JDBC: Trabalhando com um banco de dados
 ---
 
 ## Para Iniciar
 
 ### 2 - ORM com JPA
 
-- 2.1 - Persistência com JPA: Hibernate
 - 2.2 - Java e JPA: consultas avançadas, performance e modelos complexos
 
 ---
