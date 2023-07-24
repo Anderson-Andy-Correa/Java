@@ -39,7 +39,7 @@ public class ProdutoDao {
     }
 
     public List<Produto> buscarPorNomeCategoria (String nome) {
-        return this.em.createQuery("SELECT p FROM Produto p WHERE p.categoria.nome = :nome", Produto.class)
+        return this.em.createNamedQuery("Produtos.produtosPorCategoria", Produto.class)
                 .setParameter("nome", nome)
                 .getResultList();
     }

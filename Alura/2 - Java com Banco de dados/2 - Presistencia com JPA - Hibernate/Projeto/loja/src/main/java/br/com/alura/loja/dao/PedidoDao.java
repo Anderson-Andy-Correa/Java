@@ -1,11 +1,13 @@
 package br.com.alura.loja.dao;
 
 import br.com.alura.loja.modelo.Pedido;
+import br.com.alura.loja.vo.RelatorioDeVendasVO;
 
 import javax.persistence.EntityManager;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.List;
+import java.util.Objects;
 
 public class PedidoDao {
 
@@ -35,4 +37,26 @@ public class PedidoDao {
         return this.em.createQuery(jpql, BigDecimal.class)
                 .getSingleResult();
     }
+
+    public List<RelatorioDeVendasVO> relatorioVendas() {
+        String jpql = "SELECT new br.com.alura.loja.vo.RelatorioDeVendasVO(" +
+                "produto.nome, " +
+                "SUM(item.quantidade), " +
+                "MAX(pedido.data)) " +
+                "FROM Pedido pedido " +
+                "JOIN pedido.itens item " +
+                "JOIN item.produto produto " +
+                "GROUP BY produto.nome " +
+                "ORDER BY SUM(item.quantidade) DESC";
+        return em.createQuery(jpql, RelatorioDeVendasVO.class)
+                .getResultList();
+    }
+
+    public Pedido buscarPedidoComCliente(Long id) {
+        String jpql = "SELECT p FROM Pedido p JOIN FETCH p.cliente WHERE p.id = :id";
+        return em.createQuery(jpql, Pedido.class)
+                .setParameter("id", id)
+                .getSingleResult();
+    }
+
 }
