@@ -7,14 +7,12 @@ import br.com.alura.loja.modelo.Categoria;
 import br.com.alura.loja.modelo.Produto;
 
 import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
 import java.math.BigDecimal;
 import java.util.List;
 
-public class CadastroDeProdutp {
+public class CadastroDeProduto {
     public static void main(String[] args) {
-        //cadastrarProduto();
+        cadastrarProduto();
         EntityManager em = JPAUtil.getEntityManager();
         ProdutoDao produtoDao = new ProdutoDao(em);
 
