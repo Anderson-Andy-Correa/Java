@@ -17,7 +17,7 @@ public class Main {
         System.out.println(minhaMusica.toString());
         System.out.println(minhaMusica.getClassificacao());
 
-
+// teste
         var meuPodis = new Podcasts();
         meuPodis.setDuracao(Time.valueOf("6:00:00"));
         meuPodis.setTitulo("Turminha do Barulho");
